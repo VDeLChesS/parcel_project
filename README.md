@@ -52,6 +52,43 @@ The map is implemented using **Leaflet.js** for simplicity and lightweight perfo
 
 A time slider component is included in the application, but it is not yet linked to any specific functionality. This is planned for future updates.
 
+## Upcoming Features
+
+### Enhanced Map Functionality
+* Integration of heatmap layer to visualize art activity density
+* Real-time exhibition location markers with popup information
+* Custom map styling with dark/light mode toggle
+* Cluster markers for areas with multiple exhibitions
+* Advanced filtering options for map markers
+
+### Database Integration
+* Implementation of PostgreSQL database for exhibition data
+* Real-time updates for new exhibition locations
+* Historical exhibition data archive
+* API endpoints for external data access
+* Automated data validation and cleaning pipeline
+
+### Interactive Time Slider
+* Dynamic filtering of map markers based on selected time period
+* Synchronized updates across all visualization components
+* Animation feature to show exhibition patterns over time
+* Custom date range selection
+* Timeline markers for significant art events
+
+### Additional Visualizations
+* Artist movement patterns across venues over time
+* Exhibition popularity trends
+* Artwork price evolution charts
+* Genre distribution analysis
+* Venue capacity utilization graphs
+
+### Performance Optimizations
+* Implementation of data caching
+* Lazy loading for map markers
+* Optimized database queries
+* Progressive loading for historical data
+* Mobile-responsive design improvements
+
 ## Contribution
 
 Feel free to contribute by submitting issues or pull requests to improve the project!
