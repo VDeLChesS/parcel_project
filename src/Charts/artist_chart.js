@@ -4,7 +4,6 @@ import exhibitions from "../data/exhibition_data";
 
 let currentArtistChart = null;
 
-// Options de base pour le graphique
 const baseChartOptions = {
   indexAxis: "y",
   animation: false,
@@ -18,7 +17,6 @@ const baseChartOptions = {
   },
 };
 
-// Fonction pour obtenir les options du graphique en fonction du type de graphique
 const getChartOptions = (chartType) => {
   const options = { ...baseChartOptions };
 
@@ -61,7 +59,6 @@ const getChartOptions = (chartType) => {
   return options;
 };
 
-// Couleurs du graphique
 const chartColors = {
   backgroundColor: [
     "rgba(255, 99, 132, 0.2)",
@@ -92,7 +89,6 @@ const chartColors = {
 (async function () {
   const data = exhibitions;
 
-  // Fonction pour obtenir les 10 meilleurs artistes par nombre de peintures
   const getTopArtistsByPaintings = () => {
     return data
       .reduce((acc, curr) => {
@@ -108,7 +104,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Fonction pour obtenir les 10 meilleurs artistes par nombre d'expositions
   const getTopArtistsByExhibitions = () => {
     return Object.values(
       data.reduce((acc, curr) => {
@@ -129,7 +124,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Fonction pour obtenir les 10 meilleurs artistes par nombre de lieux uniques
   const getTopArtistsByVenues = () => {
     return Object.values(
       data.reduce((acc, curr) => {
@@ -154,7 +148,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Fonction pour créer les données du graphique en fonction du type de graphique
   const createChartData = (chartType) => {
     let topArtists;
     let dataKey;
@@ -194,7 +187,6 @@ const chartColors = {
     };
   };
 
-  // Fonction pour mettre à jour le graphique
   window.updateArtistChart = function (chartType) {
     if (currentArtistChart) {
       currentArtistChart.destroy();
@@ -214,6 +206,5 @@ const chartColors = {
     });
   };
 
-  // Initialiser avec le graphique des peintures
   updateArtistChart("paintings");
 })();

@@ -87,28 +87,9 @@ const chartColors = {
   ],
 };
 
-/*function updateVenueChart(type) {
-  const metrics = calculateVenueMetrics(type);
-  const labels = metrics.map((m) => m.name);
-  const data = metrics.map((m) => m.value);
-
-  venueChart.data.labels = labels;
-  venueChart.data.datasets = [
-    {
-      label: `Top 10 Venues by ${type.charAt(0).toUpperCase() + type.slice(1)}`,
-      data: data,
-      backgroundColor: "rgba(75, 192, 192, 0.2)",
-      borderColor: "rgba(75, 192, 192, 1)",
-      borderWidth: 1,
-    },
-  ];
-  venueChart.update();
-}*/
-
 (async function () {
   const data = exhibitions;
 
-  // Function to get the top 10 venues by number of artists
   const getTopVenuesByNbOfArtists = () => {
     return Object.values(
       data.reduce((acc, curr) => {
@@ -133,7 +114,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Function to get the top 10 venues by number of exhibited paintings
   const getTopVenuesByPaintings = () => {
     return Object.values(
       data.reduce((acc, curr) => {
@@ -154,7 +134,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Function to get the top 10 venues by number of exhibitions
   const getTopVenuesByNbOfExhibitions = () => {
     return Object.values(
       data.reduce((acc, curr) => {
@@ -177,7 +156,6 @@ const chartColors = {
       .slice(0, 10);
   };
 
-  // Function to create chart data based on the chart type
   const createChartData = (chartType) => {
     let topVenues;
     let dataKey;
@@ -215,7 +193,6 @@ const chartColors = {
     };
   };
 
-  // Function to update the chart
   window.updateVenueChart = function (chartType) {
     if (currentVenueChart) {
       currentVenueChart.destroy();
@@ -236,6 +213,5 @@ const chartColors = {
     });
   };
 
-  // Initialize with the chart for number of artists
   updateVenueChart("artists");
 })();
