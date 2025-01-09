@@ -93,6 +93,3 @@ A time slider component is included in the application, but it is not yet linked
 
 Feel free to contribute by submitting issues or pull requests to improve the project!
 
-## License
-
-This project is licensed under the MIT License.
