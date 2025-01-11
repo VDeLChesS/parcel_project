@@ -159,7 +159,6 @@
     <script type="module" src="./Charts/venue_chart.js"></script>
     <script src="./data/exhibition_data.js"></script>
     <script>
-      // La je declare mes variables globales
       let heatmapData = [];
       let exhibitions = [];
       let artists = [];
@@ -167,7 +166,6 @@
       let timeRange = [1905, 1915];
       let map;
 
-      // Ici tu initialise la carte mais jai pas encore fini dintegrer les données
       function initMap() {
         map = L.map("map").setView([48.8566, 2.3522], 4);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
@@ -175,7 +173,6 @@
         );
       }
 
-      // La je declare ma fonction pour le slider mais pareil la faut que je fasse encore des modifs
       function initTimeSlider() {
         const slider = document.getElementById("timeSlider");
         noUiSlider.create(slider, {
@@ -194,7 +191,6 @@
         });
       }
 
-      // Ici tu charge les données
       async function loadData() {
         const [exhibitions, artists] = await Promise.all([
           axios.get("../data/exhibition_data.js"),
@@ -204,7 +200,6 @@
       }
 
       function processData(e) {
-        // La tu les traites
         venues = rawVenues.map((e) => ({
           e_id: e_id,
           e_title: e_title,
@@ -246,7 +241,6 @@
 
       loadData();
 
-      // une chtite fonction pour calculer les métriques des artistes, pour calculer les métriques des lieux tu fais pareil
       function calculateArtistMetrics(type) {
         const filteredExhibitions = exhibitions.filter(
           (e) =>
@@ -288,7 +282,6 @@
       }
 
       function calculateVenueMetrics(type) {
-        // La tu fais pareil pour les lieux
         const venueMap = new Map();
 
         exhibitions.forEach((exhibition) => {
@@ -343,7 +336,6 @@
       }
 
       function createHeatmapData() {
-        // Ici tu as les données pour la carte thermique ( à compléter encore)
         const venueMap = new Map();
 
         exhibitions.forEach((exhibition) => {
@@ -361,13 +353,11 @@
         heatmapData = Array.from(venueMap.values());
       }
 
-      // Mise à jour de la visualisation / encore a compléter
       function updateVisualization() {
         updateHeatmap();
         updateCharts();
       }
 
-      // Mise à jour de la carte thermique / idem
       function updateHeatmap() {
         map.eachLayer((layer) => {
           if (layer instanceof L.Marker || layer.options.heatmap) {
@@ -402,7 +392,6 @@
         });
       }
 
-      // Création du contenu de la popup
       function createPopupContent(venue) {
         return `
                         <div class="popup">
@@ -428,13 +417,11 @@
                     `;
       }
 
-      // la jai les functions pour mettre à jour les graphiques
       function updateCharts() {
         updateArtistChart();
         updateVenueChart();
       }
 
-      // La tu initialise les graphiques
       function initCharts() {
         const artistCtx = document
           .getElementById("artistChart")

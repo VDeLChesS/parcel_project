@@ -2,6 +2,7 @@
   "name": "parcel_project",
   "version": "1.0.0",
   "scripts": {
+    "cache": "rm -rf .cache dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
     "build": "parcel build src/index.html"
@@ -18,5 +19,16 @@
     "momentjs": "^2.0.0",
     "parcel": "^2.13.3",
     "parcel-bundler": "^1.12.4"
-  }
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "standard": "^17.1.2"
+  },
+  "browserslist": [
+    "last 1 version"
+  ],
+  "engines": {
+    "node": ">=14"
+  },
+  "type": "module"
 }

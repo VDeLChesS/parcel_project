@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "target": "ES2022",
+        "jsx": "react",
+        "allowImportingTsExtensions": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictPropertyInitialization": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+    },
+    "exclude": [
+        "node_modules",
+        "**/node_modules/*"
+    ],
+    "compileOnSave": true,
+    "buildOptions": {
+        "outDir": "dist",
+        "minify": true,
+        "bundle": true,
+        "sourcemap": true,
+        "watch": true,
+        "metafile": true,
+        "incremental": true
+    }
+}
